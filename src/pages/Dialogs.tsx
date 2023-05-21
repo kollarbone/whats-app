@@ -38,8 +38,8 @@ const Dialogs: React.FC = () => {
     
     return (<>
             {stateInstance === "authorized" && 
-                <div className="grid grid-cols-2 gap-1 h-screen">
-                    <div>
+                <div className="sm:grid sm:grid-cols-2 gap-1 h-screen grid grid-cols-1">
+                    <div className="sm:relative h-full overflow-auto">
                         <Header/>
                         <div className="flex flex-col">
                             <div className="bg-slate-400 p-4 text-lg mb-1  flex justify-between items-center">
@@ -60,8 +60,8 @@ const Dialogs: React.FC = () => {
                             {error && <p className="text-red-400">{error}</p>}
                             {chatInfo && chatInfo.map((item, index)=>
                                 (<motion.div className={active === item.chatId ? 
-                                    "bg-slate-50 p-5 mb-1 cursor-pointer flex justify-between items-center duration-200":
-                                    "bg-slate-300 p-5 mb-1 cursor-pointer flex justify-between items-center duration-200"} key={index} 
+                                    "bg-slate-50 p-5 mb-1 cursor-pointer flex justify-between items-center duration-200 ":
+                                    "bg-slate-300 p-5 mb-1 cursor-pointer flex justify-between items-center duration-200 "} key={index} 
                                     data-chatid={item.chatId} 
                                     onMouseDown={handleChat}
                                     initial={{ opacity: 0, y: -60 }}
